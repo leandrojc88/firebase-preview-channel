@@ -3,6 +3,10 @@ name: Deploy to Firebase Preview Channels form Jira
 on:
   workflow_dispatch:
 
+concurrency:
+  group: deploy-from-jira
+  cancel-in-progress: true
+  
 jobs:
   preview-deploy:
     runs-on: ubuntu-latest
